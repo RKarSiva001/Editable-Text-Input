@@ -2,24 +2,20 @@ import {Component} from 'react'
 
 class EditableTextInput extends Component {
   state = {
-    inputText: '',
     input: '',
     button: false,
   }
 
   onChangeInputText = event => {
-    const {inputText, input} = this.state
-    this.setState({inputText: event.target.value, input: inputText})
+    this.setState({input: event.target.value})
   }
 
   onToggleButton = () => {
-    const {inputText, input} = this.state
     this.setState(prevState => ({button: !prevState.button}))
-    this.setState({input: inputText})
   }
 
   render() {
-    const {input, inputText, button} = this.state
+    const {input, button} = this.state
 
     return (
       <>
